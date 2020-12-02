@@ -92,11 +92,13 @@ void main(int args, char **argv)
 }
 void handler(int signum)
 {
-
+    //1- parernt will excute this
     int pid, stat_loc;
 
     pid = wait(&stat_loc);
     int i = (a[0] == pid) ? 1 : 2;
+
+    // alawys will find exit code as it just be called when we fin a solution
     if (!(stat_loc & 0x00FF))
         printf("\nchild%d : found value %d at postion %d\n", i, x, stat_loc >> 8);
 
