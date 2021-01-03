@@ -6,7 +6,7 @@
 
 void handler(int signum);
 
-int x, idx = 73;
+int x, idx = -1;
 int childIdx;
 int a[2];
 void main(int args, char **argv)
@@ -65,7 +65,7 @@ void main(int args, char **argv)
                 printf("\nI am the child %d, my pid = %d and my parent's pid = %d\n", i + 1, getpid(), getppid());
             }
             //exit(idx);
-            if (idx == 73)
+            if (idx == -1)
             {
 
                 sleep(3);
